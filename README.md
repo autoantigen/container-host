@@ -1,7 +1,7 @@
 # container-host
-add docker nginx container host to /etc/hosts
+add docker nginx or apache container host to /etc/hosts
 
 #usage
- sudo python route.py nginx_container_name hostname
+ sudo python route.py nginx(apache)_container_name hostname
  
  container must be running
