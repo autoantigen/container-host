@@ -23,7 +23,11 @@ def host(container):
     m2 = m2host.stdout.read()
     p_json = json.loads(m2)
     newIp = p_json[0]["NetworkSettings"]["IPAddress"]
-    return newIp
+    if newIp:
+       return newIp
+    else: 
+       newIp2 = p_json[0]["NetworkSettings"]["Networks"]["shared"]["IPAddress"] 
+       return newIp2
 
 def update(ipaddress, hostname):
     f = open('/etc/hosts', 'r')
